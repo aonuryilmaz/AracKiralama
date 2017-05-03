@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Admin/Shared/_AdminLayout.cshtml";
+}
+
+@model AracKiralama.Models.Arac
+<form method="post" enctype="multipart/form-data">
+   
+    <div class="form-group">
+        @Html.LabelFor(x => x.Marka)
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Model)
+        @Html.TextBoxFor(x => x.Model, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Plaka)
+        @Html.TextBoxFor(x => x.Plaka, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Vites)
+        @Html.TextBoxFor(x => x.Vites, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Fiyat)
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+

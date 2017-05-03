@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArackiralamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Arac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Marka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="Plaka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vites" Type="nchar" MaxLength="10" />
+    <Property Name="Durum" Type="bit" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fiyat" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Kiralama">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslangıc" Type="date" />
+    <Property Name="Bitis" Type="date" />
+    <Property Name="MüsteriTc" Type="nvarchar" MaxLength="50" />
+    <Property Name="AracId" Type="int" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="TC" />
+    </Key>
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="TC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="ArackiralamaModelStoreContainer">
+    <EntitySet Name="Arac" EntityType="Self.Arac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kiralama" EntityType="Self.Kiralama" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

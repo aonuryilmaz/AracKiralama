@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ArackiralamaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ArackiralamaModelStoreContainer">
+    <EntitySet Name="Arac" EntityType="ArackiralamaModel.Store.Arac" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kiralama" EntityType="ArackiralamaModel.Store.Kiralama" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Musteri" EntityType="ArackiralamaModel.Store.Musteri" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Arac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Marka" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Plaka" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Vites" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="Durum" Type="bit" Nullable="true" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fiyat" Type="nchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Kiralama">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslangıc" Type="datetime" Nullable="true" />
+    <Property Name="Bitis" Type="datetime" Nullable="true" />
+    <Property Name="MüsteriTc" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AracId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Musteri">
+    <Key>
+      <PropertyRef Name="TC" />
+    </Key>
+    <Property Name="AdSoyad" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="TC" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Tel" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ArackiralamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Arac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vites" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Durum" Type="Boolean" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fiyat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kiralama">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslangıc" Type="DateTime" Precision="0" />
+          <Property Name="Bitis" Type="DateTime" Precision="0" />
+          <Property Name="MüsteriTc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AracId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="TC" />
+          </Key>
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ArackiralamaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Arac" EntityType="Self.Arac" />
+          <EntitySet Name="Kiralama" EntityType="Self.Kiralama" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArackiralamaModelStoreContainer" CdmEntityContainer="ArackiralamaEntities">
+    <EntitySetMapping Name="Arac">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Arac)">
+        <MappingFragment StoreEntitySet="Arac">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Marka" ColumnName="Marka" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="Vites" ColumnName="Vites" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kiralama">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Kiralama)">
+        <MappingFragment StoreEntitySet="Kiralama">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Baslangıc" ColumnName="Baslangıc" />
+          <ScalarProperty Name="Bitis" ColumnName="Bitis" />
+          <ScalarProperty Name="MüsteriTc" ColumnName="MüsteriTc" />
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Musteri)">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
