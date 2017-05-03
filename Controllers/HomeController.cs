@@ -9,10 +9,12 @@ namespace AracKiralama.Controllers
 {
     public class HomeController : Controller
     {
+        Models.ArackiralamaEntities db = new Models.ArackiralamaEntities();
         // GET: Home
         public ActionResult Index()
-        {          
-           return View();
+        {
+            List<Arac> aracs = db.Arac.Where(x=>x.Durum==true).ToList();
+           return View(aracs);
         }
     }
 }

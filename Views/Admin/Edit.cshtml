@@ -23,10 +23,19 @@
         @Html.LabelFor(x => x.Vites)
         @Html.TextBoxFor(x => x.Vites, new { @class = "form-control" })
     </div>
+
     <div class="form-group">
         @Html.LabelFor(x => x.Fiyat)
         @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+        <input type="file" name="_document" />
+
+        <img src="@Model.imagePath" width="60" height="60" />
+    </div>
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </div>
 </form>
 

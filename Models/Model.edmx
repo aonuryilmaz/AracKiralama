@@ -4,45 +4,46 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ArackiralamaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="ArackiralamaModelStoreContainer">
-    <EntitySet Name="Arac" EntityType="ArackiralamaModel.Store.Arac" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Kiralama" EntityType="ArackiralamaModel.Store.Kiralama" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Musteri" EntityType="ArackiralamaModel.Store.Musteri" store:Type="Tables" Schema="dbo" />
-  </EntityContainer>
-  <EntityType Name="Arac">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Marka" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Model" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Plaka" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Vites" Type="nchar" Nullable="true" MaxLength="10" />
-    <Property Name="Durum" Type="bit" Nullable="true" />
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fiyat" Type="nchar" Nullable="true" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="Kiralama">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Baslangıc" Type="datetime" Nullable="true" />
-    <Property Name="Bitis" Type="datetime" Nullable="true" />
-    <Property Name="MüsteriTc" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="AracId" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Musteri">
-    <Key>
-      <PropertyRef Name="TC" />
-    </Key>
-    <Property Name="AdSoyad" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="TC" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Tel" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="password" Type="nvarchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="ArackiralamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Arac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Marka" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vites" Type="nchar" MaxLength="10" />
+          <Property Name="Durum" Type="bit" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fiyat" Type="nchar" MaxLength="10" />
+          <Property Name="imagePath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kiralama">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslangıc" Type="date" />
+          <Property Name="Bitis" Type="date" />
+          <Property Name="MüsteriTc" Type="nvarchar" MaxLength="50" />
+          <Property Name="AracId" Type="int" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="TC" />
+          </Key>
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="TC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ArackiralamaModelStoreContainer">
+          <EntitySet Name="Arac" EntityType="Self.Arac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kiralama" EntityType="Self.Kiralama" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ArackiralamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -57,6 +58,7 @@
           <Property Name="Durum" Type="Boolean" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fiyat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Kiralama">
           <Key>
@@ -92,7 +94,8 @@
     <EntitySetMapping Name="Arac">
       <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Arac)">
         <MappingFragment StoreEntitySet="Arac">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Marka" ColumnName="Marka" />
           <ScalarProperty Name="Model" ColumnName="Model" />
           <ScalarProperty Name="Plaka" ColumnName="Plaka" />

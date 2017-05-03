@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="Content\data\flot-data.js" />
     <Content Include="Content\data\morris-data.js" />
+    <Content Include="Content\dist\css\heroic-features.css" />
     <Content Include="Content\dist\css\sb-admin-2.css" />
     <Content Include="Content\dist\css\sb-admin-2.min.css" />
     <Content Include="Content\dist\js\sb-admin-2.js" />
@@ -255,6 +256,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,7 +292,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\admin.cshtml" />
     <Content Include="Content\vendor\bootstrap-social\bootstrap-social.less" />
     <Content Include="Content\vendor\bootstrap-social\bootstrap-social.scss" />
@@ -349,6 +350,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Home\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -358,6 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

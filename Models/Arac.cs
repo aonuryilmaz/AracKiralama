@@ -21,5 +21,6 @@ namespace AracKiralama.Models
         public Nullable<bool> Durum { get; set; }
         public int Id { get; set; }
         public string Fiyat { get; set; }
+        public string imagePath { get; set; }
     }
 }

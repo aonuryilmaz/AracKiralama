@@ -1,9 +1,11 @@
 ﻿using AracKiralama.Models;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Web;
 
 namespace AracKiralama.Controllers
 {
@@ -20,8 +22,18 @@ namespace AracKiralama.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Form(Arac arac)
+        public ActionResult Form(Arac arac,HttpPostedFileBase _document)
         {
+            
+            if (_document != null)
+            {
+               
+                string fileName = _document.FileName;
+                string path = System.Web.HttpContext.Current.Server.MapPath("/Content/Image/" + fileName);
+                _document.SaveAs(path);
+                string last= "/Content/Image/" + fileName;
+                arac.imagePath = last;
+            }
             arac.Durum = true;
             db.Arac.Add(arac);
             db.SaveChanges();
@@ -30,11 +42,23 @@ namespace AracKiralama.Controllers
         public ActionResult Edit(int? id)
         {
             Arac arc = db.Arac.FirstOrDefault(x => x.Id == id);
+            TempData["image"] = arc.imagePath;
             return View(arc);
         }
         [HttpPost]
-        public ActionResult Edit(Arac arac)
+        public ActionResult Edit(Arac arac,HttpPostedFileBase _document)
         {
+            if (_document != null)
+            {
+                string fileName = _document.FileName;
+                string path = System.Web.HttpContext.Current.Server.MapPath("/Content/Image/" + fileName);
+                _document.SaveAs(path);
+                string last = "/Content/Image/" + fileName;
+                arac.imagePath = last;
+            }else
+            {
+                arac.imagePath = TempData["image"].ToString();
+            }
             Arac aracold = db.Arac.FirstOrDefault(x => x.Id == arac.Id);
             arac.Durum = aracold.Durum;
             db.Entry(aracold).CurrentValues.SetValues(arac);

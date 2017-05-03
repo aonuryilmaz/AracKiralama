@@ -2,20 +2,21 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ArackiralamaModelStoreContainer" CdmEntityContainer="ArackiralamaEntities">
     <EntitySetMapping Name="Arac">
-      <EntityTypeMapping TypeName="ArackiralamaModel.Arac">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Arac)">
         <MappingFragment StoreEntitySet="Arac">
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Marka" ColumnName="Marka" />
           <ScalarProperty Name="Model" ColumnName="Model" />
           <ScalarProperty Name="Plaka" ColumnName="Plaka" />
           <ScalarProperty Name="Vites" ColumnName="Vites" />
           <ScalarProperty Name="Durum" ColumnName="Durum" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Kiralama">
-      <EntityTypeMapping TypeName="ArackiralamaModel.Kiralama">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Kiralama)">
         <MappingFragment StoreEntitySet="Kiralama">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Baslangıc" ColumnName="Baslangıc" />
@@ -26,10 +27,10 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Musteri">
-      <EntityTypeMapping TypeName="ArackiralamaModel.Musteri">
+      <EntityTypeMapping TypeName="IsTypeOf(ArackiralamaModel.Musteri)">
         <MappingFragment StoreEntitySet="Musteri">
-          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
           <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
           <ScalarProperty Name="Tel" ColumnName="Tel" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="password" ColumnName="password" />

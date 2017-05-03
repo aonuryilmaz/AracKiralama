@@ -11,6 +11,7 @@
     <Property Name="Durum" Type="bit" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fiyat" Type="nchar" MaxLength="10" />
+    <Property Name="imagePath" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Kiralama">
     <Key>

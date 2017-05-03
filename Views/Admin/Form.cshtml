@@ -20,11 +20,14 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Vites)
-        @Html.TextBoxFor(x => x.Plaka, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.Vites, new { @class = "form-control" })
     </div>
     <div class="form-group">
        @Html.LabelFor(x => x.Fiyat)
         @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <input type="file" name="_document" />
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>

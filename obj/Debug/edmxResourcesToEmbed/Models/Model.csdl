@@ -11,6 +11,7 @@
     <Property Name="Durum" Type="Boolean" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Fiyat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Kiralama">
     <Key>
