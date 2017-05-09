@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d7f2ee2520ea495d82cf851ae94d0662" Name="Diagram1">
+      <Diagram DiagramId="c3f43b6ef1aa4213b6efd657863c33ca" Name="Diagram1">
         <EntityTypeShape EntityType="ArackiralamaModel.Arac" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ArackiralamaModel.Kiralama" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ArackiralamaModel.Musteri" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />

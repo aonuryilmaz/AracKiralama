@@ -5,35 +5,39 @@
 }
 @model List<AracKiralama.Models.Arac>
 
-<header class="jumbotron hero-spacer">
+<header class="jumbotron hero-spacer">    
+    <img src="~/Content/Image/Passat.png" />
     <h1>CARSO Araç Kiralama</h1>
     <p>Hoş geldiniz.Yapacağınız bütün kiralamar SO sigorta güvencesindedir.</p>
     <p>
-        <a href="@Url.Action("Index","Musteri")" class="btn btn-primary btn-large">Üye Ol</a>
+        <a href="@Url.Action("Kayıt","Musteri")" class="btn btn-primary btn-large">Üye Ol</a>
     </p>
 </header>
 <hr>
 <!-- Title -->
 <div class="row">
     <div class="col-lg-12">
-        <h3>Latest Features</h3>
+        <h3>Son Eklenenler</h3>
     </div>
 </div>
-@foreach (var item in Model)
-{
-    <div class="col-md-3 col-sm-6 hero-feature">
-        <div class="thumbnail">
-            <img src="@item.imagePath" alt="">
-            <div class="caption">
-                <h3>@item.Marka</h3>
-                <p>@item.Model @item.Plaka @item.Vites @item.Fiyat</p>
-                <p>
-                    <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                </p>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="@item.imagePath" class="img" alt="">
+                <div class="caption">
+                    <h3>@item.Marka</h3>
+                    <p>@item.Model @item.Plaka @item.Vites @item.Fiyat TL</p>
+                    <p>
+                        @if (Session["email"] != null)
+                        {
+                            <a href="~/Kiralama/Index/@item.Id" class="btn btn-primary">Kirala</a>
+                        }
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
     <!-- Page Features -->
-    
+
 

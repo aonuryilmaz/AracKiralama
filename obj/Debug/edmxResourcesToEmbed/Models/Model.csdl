@@ -7,11 +7,11 @@
     <Property Name="Marka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Plaka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Vites" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Durum" Type="Boolean" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fiyat" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Fiyat" Type="Int32" />
     <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Vites" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Kiralama">
     <Key>

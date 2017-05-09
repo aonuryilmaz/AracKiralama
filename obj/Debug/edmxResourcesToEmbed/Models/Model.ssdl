@@ -7,11 +7,11 @@
     <Property Name="Marka" Type="nvarchar" MaxLength="50" />
     <Property Name="Model" Type="nvarchar" MaxLength="50" />
     <Property Name="Plaka" Type="nvarchar" MaxLength="50" />
-    <Property Name="Vites" Type="nchar" MaxLength="10" />
     <Property Name="Durum" Type="bit" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fiyat" Type="nchar" MaxLength="10" />
+    <Property Name="Fiyat" Type="int" />
     <Property Name="imagePath" Type="nvarchar(max)" />
+    <Property Name="Vites" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Kiralama">
     <Key>

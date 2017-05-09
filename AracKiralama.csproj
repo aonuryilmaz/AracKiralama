@@ -134,6 +134,8 @@
     <Content Include="Content\dist\css\sb-admin-2.min.css" />
     <Content Include="Content\dist\js\sb-admin-2.js" />
     <Content Include="Content\dist\js\sb-admin-2.min.js" />
+    <Content Include="Content\Image\Passat.png" />
+    <Content Include="Content\Image\passat2.png" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\sb-admin-2.js" />
     <Content Include="Content\vendor\bootstrap-social\bootstrap-social.css" />
@@ -256,6 +258,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KiralamaController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,9 +266,11 @@
     <Compile Include="Models\Arac.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AracEkle.cs" />
     <Compile Include="Models\Kiralama.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -342,6 +347,13 @@
     <Content Include="Views\Admin\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Form.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Home\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Musteri\Kayıt.cshtml" />
+    <Content Include="Views\Musteri\Giris.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Kiralama\Index.cshtml" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -349,10 +361,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Admin\Edit.cshtml" />
-    <Content Include="Views\Home\Shared\_HomeLayout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Musteri\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -362,7 +370,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

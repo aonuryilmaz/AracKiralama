@@ -17,10 +17,10 @@ namespace AracKiralama.Models
         public string Marka { get; set; }
         public string Model { get; set; }
         public string Plaka { get; set; }
-        public string Vites { get; set; }
         public Nullable<bool> Durum { get; set; }
         public int Id { get; set; }
-        public string Fiyat { get; set; }
+        public Nullable<int> Fiyat { get; set; }
         public string imagePath { get; set; }
+        public string Vites { get; set; }
     }
 }
