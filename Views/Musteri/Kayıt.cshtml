@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Kayıt";
+    Layout = "~/Views/Home/Shared/_HomeLayout.cshtml";
+}
+@model AracKiralama.Models.Musteri
+   
+    <h2>Müşteri Kayıt Ekranı</h2>
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                @Html.LabelFor(x => x.AdSoyad)
+                @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Email)
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.TC)
+                @Html.TextBoxFor(x => x.TC, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Tel)
+                @Html.TextBoxFor(x => x.Tel, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.password)
+                @Html.TextBoxFor(x => x.password, new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-default btn-success">Submit</button>
+        </form>
+    </div>
