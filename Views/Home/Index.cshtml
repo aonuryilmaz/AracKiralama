@@ -7,7 +7,7 @@
 
 <header class="jumbotron hero-spacer">    
     <img src="~/Content/Image/Passat.png" />
-    <h1>CARSO Araç Kiralama</h1>
+    <h1>OS-CAR Araç Kiralama</h1>
     <p>Hoş geldiniz.Yapacağınız bütün kiralamar SO sigorta güvencesindedir.</p>
     <p>
         <a href="@Url.Action("Kayıt","Musteri")" class="btn btn-primary btn-large">Üye Ol</a>
@@ -17,21 +17,24 @@
 <!-- Title -->
 <div class="row">
     <div class="col-lg-12">
-        <h3>Son Eklenenler</h3>
+        <h3>Araçlar</h3>
     </div>
 </div>
     @foreach (var item in Model)
     {
         <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-                <img src="@item.imagePath" class="img" alt="">
+                    <img src="@item.imagePath" class="img" alt="">
                 <div class="caption">
                     <h3>@item.Marka</h3>
-                    <p>@item.Model @item.Plaka @item.Vites @item.Fiyat TL</p>
+                    <span>@item.Model</span>
+                    <span>@item.Plaka</span>
+                    <span>@item.Vites</span>
+                    <span>@item.Fiyat&#8378;</span>
                     <p>
                         @if (Session["email"] != null)
                         {
-                            <a href="~/Kiralama/Index/@item.Id" class="btn btn-primary">Kirala</a>
+                            <a href="~/Kiralama/Index/@item.Id" style="margin-top:10px" class="btn btn-primary">Kirala</a>
                         }
                     </p>
                 </div>

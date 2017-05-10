@@ -48,3 +48,6 @@ C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bi
 C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\EntityFramework.SqlServer.dll
 C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\EntityFramework.xml
 C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\EntityFramework.SqlServer.xml
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\Iyzipay.dll
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\Newtonsoft.Json.dll
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\AracKiralama\AracKiralama\bin\Newtonsoft.Json.xml

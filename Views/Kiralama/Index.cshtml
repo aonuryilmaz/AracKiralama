@@ -4,25 +4,27 @@
     Layout = "~/Views/Home/Shared/_HomeLayout.cshtml";
 }
 @model AracKiralama.Models.Arac
-<div>
+<div class="col-md-6 col-md-offset-3">
     <div>
-        <img src="@Model.imagePath" width="200" height="200" />
+        <img src="@Model.imagePath"  />
         <h3>@Model.Marka</h3>
         <h4>@Model.Model</h4>
         <h5>@Model.Vites</h5>
         <h6>@Model.Fiyat</h6>
     </div>
-    <form method="post" action="/Kiralama/Add/@Model.Id">
-        <div class="form-group-lg">
-            <label for="startdate">Başlangıc Tarihi:</label>
-            <input type="date" class="" name="startdate" id="startdate" />
-        </div>
-        <div class="form-group-lg">
-            <label for="enddate">Bitiş Tarihi:</label>
-            <input type="date" class="" name="enddate" id="enddate" />
-        </div>
-        
-        <input type="submit" value="Kaydet" />
-    </form>
+    <div >
+        <form method="post" action="/Kiralama/Add/@Model.Id">
+            <div class="form-group">
+                <label for="startdate">Başlangıc Tarihi:</label>
+                <input type="date" class="form-control" name="startdate" id="startdate" />
+            </div>
+            <div class="form-group">
+                <label for="enddate">Bitiş Tarihi:</label>
+                <input type="date" class="form-control" name="enddate" id="enddate" />
+            </div>
+
+            <input type="submit" class="btn btn-success" value="Kaydet" />
+        </form>
+    </div>   
 </div>
 

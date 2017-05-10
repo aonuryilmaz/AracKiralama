@@ -4,23 +4,22 @@
     Layout = "~/Views/Home/Shared/_HomeLayout.cshtml";
 }
 @model List<AracKiralama.Models.Arac>
+<div id="iyzipay-checkout-form" class="responsive"></div>
 @foreach (var item in Model)
 {
     <div class="col-md-3 col-sm-6 hero-feature">
         <div class="thumbnail">
-            <img src="@item.imagePath" alt="">
+                <img src="@item.imagePath" alt="">
             <div class="caption" >
                 <h3>@item.Marka</h3>
-                <p>@item.Model @item.Plaka @item.Vites @item.Fiyat TL</p>
+                <span>@item.Model</span>
+                <span>@item.Plaka</span>
+                <span>@item.Vites</span>
+                <span>@item.Fiyat&#8378;</span>
             </div>
         </div>
     </div>
 }
-@if (ViewBag.total!=null && ViewBag.total != 0)
-{
-    <div class="total">
-        Toplam:@ViewBag.total TL
-    </div>
-}
+
 
 

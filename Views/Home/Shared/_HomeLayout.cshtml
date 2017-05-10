@@ -45,9 +45,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Durum</a>
-                    </li>
-                    <li>
                         @if (Session["email"] != null)
                         {
                             <a href="@Url.Action("Index","Musteri")">@Session["UserName"]</a>
